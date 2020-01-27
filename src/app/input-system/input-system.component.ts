@@ -32,10 +32,9 @@ export class InputSystemComponent implements OnInit, OnDestroy {
   ngOnInit() {}
 
   onSubmit(data: any) {
-    console.log(data);
-    let managerId = data.managerId;
-    if (managerId) {
-      managerId = +managerId;
+    let managerId = null;
+    if (data.managerId) {
+      managerId = +data.managerId;
     }
     this.allocationService.addUser({ ...data, managerId });
     this.userSelectForm.reset();

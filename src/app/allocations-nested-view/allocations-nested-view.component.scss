@@ -1,0 +1,66 @@
+ul {
+  list-style: none;
+  padding: 10px 0;
+
+  li {
+    border: 1px solid #e2e8ec;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px 0;
+
+    .list-text-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        border: 0;
+        border-radius: 5px;
+        padding: 5px 20px;
+        font-size: 12px;
+        outline: none;
+        background: #273c75;
+        color: white;
+      }
+
+      .team-title {
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+
+      .team-role {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: white;
+        padding: 5px;
+        background-color: burlywood;
+        margin: 0 5px;
+        border-radius: 4px;
+      }
+
+      .team-allocation {
+        font-size: 12px;
+        color: green;
+        font-weight: 500;
+
+        &-subText {
+          color: black;
+        }
+      }
+
+      .team-container {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+.no-allocations {
+  font-size: 25px;
+  color: #273c75;
+  text-align: center;
+  margin-top: 30px;
+}

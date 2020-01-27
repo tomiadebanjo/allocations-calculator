@@ -1,0 +1,36 @@
+<ul *ngIf="teamMembers.length">
+  <li *ngFor="let team of teamMembers">
+    <div class="list-text-container">
+      <div>
+        <div class="team-container">
+          <span class="team-title">
+            {{ team.name }}
+          </span>
+
+          <span class="team-role">
+            {{ team.role }}
+          </span>
+        </div>
+        <span *ngIf="team.totalAllocation" class="team-allocation">
+          <span class="team-allocation-subText">Allocation: </span> ${{
+            team.totalAllocation
+          }}</span
+        >
+      </div>
+      <button
+        *ngIf="team.role === 'manager' && team.staff.length"
+        (click)="toggleDropDown(team.id)"
+      >
+        {{ showChildren[team.id] ? 'Collapse' : 'Expand' }}
+      </button>
+    </div>
+    <app-allocations-nested-view
+      [teamMembers]="team.staff"
+      *ngIf="team.staff && showChildren[team.id]"
+    ></app-allocations-nested-view>
+  </li>
+</ul>
+
+<div *ngIf="!teamMembers.length" class="no-allocations">
+  <p>No Allocations Yet! Add an allocation.</p>
+</div>

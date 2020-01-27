@@ -9,4 +9,5 @@ export interface User {
   managerName?: string;
   staff?: User[];
   allocation?: Allocation;
+  totalAllocation?: number;
 }

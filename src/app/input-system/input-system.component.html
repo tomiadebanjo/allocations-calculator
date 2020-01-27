@@ -11,7 +11,7 @@
       <label for="role" class="role-input">
         Role
         <select name="role" id="role" formControlName="role">
-          <option value="">Select Role</option>
+          <option value="" selected>Select Role</option>
           <option value="manager">Manager - $30000</option>
           <option value="developer">Developer - $1000</option>
           <option value="qaTester">QA Tester -$5000</option>
@@ -21,7 +21,7 @@
       <label for="manager" class="role-input" *ngIf="managerList.length > 0">
         Manager
         <select name="manager" id="manager" formControlName="managerId">
-          <option value="">Select Manager</option>
+          <option value="" selected>Select Manager</option>
           <option
             value="{{ manager.id }}"
             *ngFor="let manager of managerList"

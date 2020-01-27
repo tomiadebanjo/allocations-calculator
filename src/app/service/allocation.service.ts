@@ -59,8 +59,8 @@ export class AllocationService {
       managerName
     };
     users.push(newUser);
-    this.usersSource.next(users);
     this.creationAllocation({ role, userId: id });
+    this.usersSource.next(users);
   }
 
   fetchUser(userId: number) {
@@ -75,7 +75,34 @@ export class AllocationService {
     }
 
     user.allocation = allocations.filter(a => a.userId === userId)[0];
+
+    if (user.role === 'manager' && user.staff.length) {
+      user.totalAllocation = this.totalAllocation(user);
+    }
     return user;
+  }
+
+  totalAllocation(item: User): number {
+    let sum = 0;
+    sum += item.allocation.amount;
+    if (item.staff && item.staff.length) {
+      item.staff.map(itemData => {
+        sum += this.totalAllocation(itemData);
+      });
+    }
+    return sum;
+  }
+
+  fetchAll(): User[] {
+    const users = [];
+    const userData = this.usersSource.value;
+    userData
+      .filter(a => a.managerId === null)
+      .map(man => {
+        const user = this.fetchUser(man.id);
+        users.push(user);
+      });
+    return users;
   }
 
   calculateAllocationTotal(): number {

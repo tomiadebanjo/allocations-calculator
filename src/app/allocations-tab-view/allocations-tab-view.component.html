@@ -1,0 +1,29 @@
+<div class="tab-view">
+  <div
+    class="tab-option"
+    (click)="toggleTabs(true)"
+    [ngClass]="{
+      'active-tab': isTable
+    }"
+  >
+    Table View
+  </div>
+  <div class="tab-divider"></div>
+  <div
+    class="tab-option"
+    (click)="toggleTabs(false)"
+    [ngClass]="{
+      'active-tab': !isTable
+    }"
+  >
+    Nested View
+  </div>
+</div>
+<div *ngIf="isTable">
+  <app-allocations-list></app-allocations-list>
+</div>
+<div *ngIf="!isTable">
+  <app-allocations-nested-view
+    [teamMembers]="teamMembersList"
+  ></app-allocations-nested-view>
+</div>

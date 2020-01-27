@@ -1,0 +1,35 @@
+.tab-view {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e8ec;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  .active-tab {
+    color: #273c75;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 10%;
+      height: 2px;
+      background-color: #273c75;
+      bottom: 12px;
+      left: 45%;
+    }
+  }
+}
+
+.tab-option {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.tab-divider {
+  background: #e2e8ec;
+  width: 2px;
+  padding: 20px 0;
+}
