@@ -1,0 +1,30 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">Manager Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>
+          <span>
+            {{ item.name }}
+          </span>
+        </td>
+        <td>
+          <span>
+            {{ item.role }}
+          </span>
+        </td>
+        <td>
+          <span>
+            {{ item.managerName }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

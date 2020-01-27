@@ -1,0 +1,12 @@
+.container {
+  border: 1px solid #e2e8ec;
+  border-radius: 5px;
+  padding: 5px 20px;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+
+  p {
+    color: #273c75;
+  }
+}

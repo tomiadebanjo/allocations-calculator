@@ -1,0 +1,44 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  color: #273c75;
+
+  button {
+    margin-left: auto;
+    align-self: flex-end;
+    border: 0;
+    color: white;
+    background: #273c75;
+    padding: 0.4rem 0.8rem;
+    min-width: 100px;
+    border-radius: 5px;
+  }
+}
+
+.name-input {
+  display: flex;
+  flex-direction: column;
+  color: #273c75;
+  flex-basis: 25%;
+
+  input {
+    border: 0;
+    border-bottom: 1px solid #273c75;
+    font-size: 1rem;
+    padding: 0.8rem 0 0;
+    line-height: calc(25 / 16);
+    outline: none;
+  }
+}
+
+.role-input {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  margin-left: 20px;
+
+  select {
+    margin-top: 1rem;
+    outline: none;
+  }
+}
